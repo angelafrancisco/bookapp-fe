@@ -1,4 +1,4 @@
-# React + Django Full-Stack App
+# PlantPet: MERN Full-Stack App
 
 **Week 11: April 2022. Final Capstone Project for General Assembly.**
 
@@ -65,12 +65,14 @@ Hosted via Heroku: https://plantpet.herokuapp.com/ -->
 - Links to hosted and working apps
 
 ## Capstone Project MVP Goals:
+- MVP from Project #3 plus:
 - Current Models: Plants, Status
 - Add New Model: User
     - username
     - password
     - zip code (only added if utilizing weather api)
 - Improve design and add Responsive Design
+- React Router Links
 - Deployed on Heroku
 
 ## Capstone Project Stretch Goals:
