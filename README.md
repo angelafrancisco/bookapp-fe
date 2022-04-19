@@ -65,9 +65,13 @@ Hosted via Heroku: https://plantpet.herokuapp.com/ -->
 - Links to hosted and working apps
 
 ## Capstone Project MVP Goals:
-- Current models: Plants, Status
-- New model: User
+- Current Models: Plants, Status
+- Add New Model: User
+    - username
+    - password
+    - zip code (only added if utilizing weather api)
 - Improve design and add Responsive Design
+- Deployed on Heroku
 
 ## Capstone Project Stretch Goals:
 - Add image upload capability
