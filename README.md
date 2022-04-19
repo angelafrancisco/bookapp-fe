@@ -56,6 +56,7 @@ Hosted via Heroku:  -->
 - Responsive Design
 - React Router Links
 - Multiple favorite lists (add favorites to lists)
+- Image upload capability (beginning with image url first)
 
 
 ## Model
@@ -65,6 +66,7 @@ const bookSchema = new Schema({
     title: { type: String }
     author: { type: String }
     description: { type: String }
+    image: { type: String }
     read: { type: Boolean }
     listName: { type: String }
 }, { timestamps: true })
