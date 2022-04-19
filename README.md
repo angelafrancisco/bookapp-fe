@@ -60,7 +60,8 @@ Hosted via Heroku:  -->
 
 ## Model
 
-``` const bookSchema = new Schema({
+``` 
+const bookSchema = new Schema({
     title: { type: String }
     author: { type: String }
     description: { type: String }
