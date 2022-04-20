@@ -56,6 +56,7 @@ Hosted via Heroku:  -->
 - React Router Links
 - Organize books by custom list name
     - Show first 3-4 books, link to see full list on new page
+- Book recommendations (vacation reads, YA fantasy series, etc.)
 
 
 ## Model
