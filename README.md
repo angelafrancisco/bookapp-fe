@@ -3,11 +3,11 @@
 **Week 11-12: April 2022. Final Capstone Project for General Assembly.**
 
 .ReadMe book app: A full-stack MERN (React, Node/Express, MongoDB) web application to search and save books for vacation, fun, or anytime you need a reminder of what your next book should be!
-
 <!-- App name ideas: Bookasauraus Recs, BookWorm, Book-Hook-Up, .ReadMe -->
-<!-- ## Deployed Website
 
-Hosted via Heroku:  -->
+## Deployed Website
+
+Hosted via Heroku: https://readme-bookapp.herokuapp.com/
 
 
 ## Technology (MERN Stack)
@@ -15,12 +15,12 @@ Hosted via Heroku:  -->
 - HTML | CSS | Javascript
 - React
 - Node | Express
-- MongoDB
+- MongoDB | Mongoose
 
 
-<!-- ## Repositories
-    - Front-End: 
-    - Back-End:  -->
+## Repositories
+    - Front-End: https://github.com/angelafrancisco/bookapp-fe
+    - Back-End: https://github.com/angelafrancisco/bookapp-be
 
 <!-- 
 ## User Stories
