@@ -1,8 +1,8 @@
-# Capstone Project App: MERN Full-Stack App
+# Capstone Project: MERN Full-Stack App
 
 **Week 11-12: April 2022. Final Capstone Project for General Assembly.**
 
-Book App: A full-stack MERN (React, Node/Express, MongoDB) web application to search and save books for vacation, fun, or anytime you need a reminder of what your next book should be!
+.ReadMe book app: A full-stack MERN (React, Node/Express, MongoDB) web application to search and save books for vacation, fun, or anytime you need a reminder of what your next book should be!
 
 <!-- App name ideas: Bookasauraus Recs, BookWorm, Book-Hook-Up, .ReadMe -->
 <!-- ## Deployed Website
@@ -40,14 +40,13 @@ Hosted via Heroku:  -->
 - Search (Images here)
 
 
-
 ## Capstone Project MVP Goals:
 
 - A full-stack application (React + Node/Express/MongoDB)
 - MVC file structure
-- One model with full CRUD 
-- Book API
-- Search functionality (unsure if this might be too much for MVP?)
+- One model with full CRUD (book)
+- Public API: [Open Library Books API](https://openlibrary.org/dev/docs/api/books)
+- Search functionality (using API data)
 - Deployed online and accessible to the public via Heroku
 
 
@@ -55,8 +54,8 @@ Hosted via Heroku:  -->
 
 - Responsive Design
 - React Router Links
-- Multiple favorite lists (add favorites to lists)
-- Image upload capability (beginning with image url first)
+- Organize books by custom list name
+    - Show first 3-4 books, link to see full list on new page
 
 
 ## Model
