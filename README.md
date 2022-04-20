@@ -45,7 +45,7 @@ Hosted via Heroku:  -->
 - A full-stack application (React + Node/Express/MongoDB)
 - MVC file structure
 - One model with full CRUD (book)
-- Public API: [Open Library Books API](https://openlibrary.org/dev/docs/api/books)
+- Public API: [Google Books API](https://developers.google.com/books)
 - Search functionality (using API data)
 - Deployed online and accessible to the public via Heroku
 
