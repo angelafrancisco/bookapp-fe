@@ -1,8 +1,8 @@
 let apiUrl
 
 const apiUrls = {
-    production: "https://readme-bookapp-be.herokuapp.com",
-    development: "http://localhost:3000"
+    development: "http://localhost:3001",
+    production: "https://readme-bookapp-be.herokuapp.com"
 }
 
 if (window.location.hostname === "localhost") {

@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './components/header'
 import Home from './components/home/home';
 import Register from './components/home/register';
 import Login from './components/home/login';
+import BooksContainer from './components/books/booksContainer';
+import Footer from './components/footer'
 import './App.css';
 
 function App() {
@@ -16,6 +19,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/login" element={<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+            <Route path="/books" element={<BooksContainer />} />
           </Routes>
         <Footer></Footer>
       </div>

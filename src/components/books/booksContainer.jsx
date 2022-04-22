@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
-import Hero from "../hero";
+import apiUrl from '../../apiConfig';
+// import Hero from "../hero";
+import BookNew from './bookNew';
+import BookShelf from './bookShelf';
 
 const BooksContainer =()=>{
     const [books, setBooks] = useState([]);
@@ -43,7 +46,7 @@ const BooksContainer =()=>{
     }
 
     // UPDATE ================================================================================== //
-    const updatePlant = async (idToUpdate, bookToUpdate) => {
+    const updateBook = async (idToUpdate, bookToUpdate) => {
         try {
             const apiResponse = await fetch(`${apiUrl}/books/${idToUpdate}`, {
                 method: "PUT",
@@ -88,8 +91,25 @@ const BooksContainer =()=>{
 
     return (
         <>
-            <Hero/>
+            {/* <Hero/> */}
             <div className="content-wrapper">
+                <div className="books-container">
+                    <h2 className="section-header">My Bookshelf</h2>
+                    <BookNew 
+                        createNewBook={createNewBook}
+                        newBookServerError={newBookServerError}
+                    />
+                    <div className="grid-container">
+                        {books.map((book) => {
+                            return <BookShelf
+                                        key={book._id}
+                                        book={book}
+                                        updateBook={updateBook}
+                                        deleteBook={deleteBook}
+                                    />
+                        })}
+                    </div>
+                </div>
             </div>
         </>
     )

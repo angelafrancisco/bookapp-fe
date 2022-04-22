@@ -11,7 +11,7 @@ const Login = (props) => {
                     <label for="password">Password: </label>
                     <input type="password" name="password" />
                     {/* temporary link here until user route backend finished */}
-                    <Link to="/dashboard" className="register-btn"><button onClick={() => props.setIsLoggedIn(true)} className="solid-btn">Login!</button></Link>
+                    <Link to="/books" className="register-btn"><button onClick={() => props.setIsLoggedIn(true)} className="solid-btn">Login!</button></Link>
                 </form>
             </div>
         </div>
