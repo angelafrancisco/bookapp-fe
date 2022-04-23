@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import apiUrl from '../../apiConfig';
 // import Hero from "../hero";
-import BookNew from './bookNew';
+import BookForm from './bookForm';
 import BookShelf from './bookShelf';
 
 const BooksContainer =()=>{
     const [books, setBooks] = useState([]);
     const [requestError, setRequestError] = useState("");
     const [newBookServerError, setNewBookServerError] = useState("");
+    const [showing, setShowing] = useState(false);
 
     // GET ====================================================================================== //
     useEffect(() => {
@@ -93,22 +95,49 @@ const BooksContainer =()=>{
         <>
             {/* <Hero/> */}
             <div className="content-wrapper">
-                <div className="books-container">
-                    <h2 className="section-header">My Bookshelf</h2>
-                    <BookNew 
-                        createNewBook={createNewBook}
-                        newBookServerError={newBookServerError}
-                    />
-                    <div className="grid-container">
-                        {books.map((book) => {
-                            return <BookShelf
-                                        key={book._id}
-                                        book={book}
-                                        updateBook={updateBook}
-                                        deleteBook={deleteBook}
-                                    />
-                        })}
+                <div className="section-container">
+                    <div className="btn-section">
+                        {/* SEARCH BUTTON */}
+                        <Link to="/search" className="outline-btn">Search for Books!</Link>
+                        {/* NEW BUTTON */}
+                        <button onClick={() => setShowing(true)} className="solid-btn">Add a Book!</button>
+                        {/* NEW FORM */}
+                        <BookForm 
+                            createNewBook={createNewBook}
+                            isNewBook={true}
+                            newBookServerError={newBookServerError}
+                            showing={showing}
+                            closeModal={() => setShowing(false)}
+                            buttonText={"Add Book"}
+                        />
                     </div>
+                </div>
+                <div className="section-container bookshelf">
+                    {/* to do: add section for book suggestions here? */}
+                    <h2 className="section-header">My Bookshelf</h2>
+                    {books.length > 0 ?
+                        <div className="grid-container bookshelf">
+                            {/* TO DO: SORT BOOKSHELF BY LIST NAME? OR READ STATUS? */}
+                            {books.map((book) => {
+                                return <BookShelf
+                                    key={book._id}
+                                    book={book}
+                                    updateBook={updateBook}
+                                    deleteBook={deleteBook}
+                                    requestError={requestError}
+                                    showing={showing}
+                                    setShowing={setShowing}
+                                    closeModal={() => setShowing(false)}
+                                /> 
+                            })}
+                        </div>
+                    :
+                        <div className="grid-container no-books">
+                            <div className="message-box">
+                                <h3 className="message-text">Looks like you haven't added any books yet!</h3>
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
         </>
