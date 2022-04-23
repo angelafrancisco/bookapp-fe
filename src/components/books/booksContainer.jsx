@@ -2,14 +2,13 @@ import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import apiUrl from '../../apiConfig';
 // import Hero from "../hero";
-import BookForm from './bookForm';
+import NewBook from './newBook';
 import BookShelf from './bookShelf';
 
 const BooksContainer =()=>{
     const [books, setBooks] = useState([]);
     const [requestError, setRequestError] = useState("");
     const [newBookServerError, setNewBookServerError] = useState("");
-    const [showing, setShowing] = useState(false);
 
     // GET ====================================================================================== //
     useEffect(() => {
@@ -99,16 +98,10 @@ const BooksContainer =()=>{
                     <div className="btn-section">
                         {/* SEARCH BUTTON */}
                         <Link to="/search" className="outline-btn">Search for Books!</Link>
-                        {/* NEW BUTTON */}
-                        <button onClick={() => setShowing(true)} className="solid-btn">Add a Book!</button>
-                        {/* NEW FORM */}
-                        <BookForm 
+                        {/* NEW BUTTON / NEW FORM */}
+                        <NewBook 
                             createNewBook={createNewBook}
-                            isNewBook={true}
                             newBookServerError={newBookServerError}
-                            showing={showing}
-                            closeModal={() => setShowing(false)}
-                            buttonText={"Add Book"}
                         />
                     </div>
                 </div>
@@ -125,9 +118,6 @@ const BooksContainer =()=>{
                                     updateBook={updateBook}
                                     deleteBook={deleteBook}
                                     requestError={requestError}
-                                    showing={showing}
-                                    setShowing={setShowing}
-                                    closeModal={() => setShowing(false)}
                                 /> 
                             })}
                         </div>

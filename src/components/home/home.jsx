@@ -9,7 +9,7 @@ const Home = () => {
                     <h1 className="home-heading">.readME is a book community for all book lovers!</h1>
                     <Link to="/register" className="solid-btn">Join Today</Link>
                 </div>
-                <img src="./img/home.jpg" alt="mini cactus" className="home-img" />
+                <img src="./img/home.jpg" alt="Books Background" className="home-img" />
             </div>
             <Features/>
         </div>

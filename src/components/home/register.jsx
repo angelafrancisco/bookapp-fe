@@ -9,9 +9,9 @@ const Register = (props) => {
             <div className="user-form new">
                 <h3>Sign up for a free account</h3>
                 <form>
-                    <label for="username">Username: </label>
+                    <label htmlFor="username">Username: </label>
                     <input type="text" name="username" />
-                    <label for="password">Password: </label>
+                    <label htmlFor="password">Password: </label>
                     <input type="password" name="password" />
                     {/* temporary link here until user route backend finished */}
                     <Link to="/books" className="register-btn"><button onClick={() => props.setIsLoggedIn(true)} className="solid-btn">Register!</button></Link>

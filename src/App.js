@@ -11,14 +11,28 @@ import './App.css';
 function App() {
   // user backend not complete, useState will act as temporary login
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
   return (
     <BrowserRouter>
       <div className="App">
-        <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}></Header>
+        <Header 
+          isLoggedIn={isLoggedIn} 
+          setIsLoggedIn={setIsLoggedIn}
+        ></Header>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/register" element={<Register isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
-            <Route path="/login" element={<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+            <Route path="/register" element={
+              <Register 
+                isLoggedIn={isLoggedIn} 
+                setIsLoggedIn={setIsLoggedIn} 
+              />} 
+            />
+            <Route path="/login" element={
+              <Login 
+                isLoggedIn={isLoggedIn} 
+                setIsLoggedIn={setIsLoggedIn} 
+              />} 
+            />
             <Route path="/books" element={<BooksContainer />} />
           </Routes>
         <Footer></Footer>

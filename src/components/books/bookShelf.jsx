@@ -1,19 +1,21 @@
 import { useState } from "react";
-// import Modal from 
+import Modal from "./modal"
+import BookForm from "./bookForm";
 
 const BookShelf = (props) =>{
-    const [updateModalShowing, setUpdateModalShowing] = useState(false)
-
+    const [showingBook, setShowingBook] = useState(false)
+    const [showingForm, setShowingForm] = useState(false);
+    
     return (
         <>
             {/* HOVER EFFECT ON .book-img.view TO SHOW BUTTON */}
             <div className="book-img view" style={{ backgroundImage: `url(${props.book.image})` }}></div>
             {/* HOVER EFFECT ON .view-btn OUTLINE >> SOLID */}
-            <button onClick={props.setShowing(true)} className="view-btn">More Info</button>
+            <button onClick={() => setShowingBook(true)} className="view-btn">More Info</button>
             {/* showing = false until edit button clicked */}
-            <Modal isOpen={props.showing}>
+            <Modal isOpen={showingBook}>
                 <div className="book-view-modal">
-                    <button onClick={props.closeModal} className="outline-btn">X</button>
+                    <button onClick={() => setShowingBook(false)} className="outline-btn">X</button>
                     <div className="book-view-container">
                         <div className="book-img view" style={{ backgroundImage: `url(${props.book.image})` }}></div>
                         <div className="book-view-box">
@@ -25,14 +27,16 @@ const BookShelf = (props) =>{
                         </div>
                     </div>
                     {/* UPDATE/EDIT BUTTON */}
-                    <button onClick={() => props.setUpdateModalShowing(true)} className="outline-btn edit">Edit</button>
+                    <button onClick={() => setShowingForm(true)} className="outline-btn edit">Edit</button>
                     {/* UPDATE/EDIT FORM */}
                     <BookForm
+                        key={props.book._id}
+                        book={props.book}
                         updateBook={props.updateBook}
                         isNewBook={false}
-                        showing={updateModalShowing}
-                        setShowing={setUpdateModalShowing}
-                        closeModal={() => setUpdateModalShowing(false)}
+                        showingForm={showingForm}
+                        setShowingForm={setShowingForm}
+                        closeForm={() => setShowingForm(false)}
                         buttonText={"Update"} 
                     />
                     {/* DELETE BUTTON */}

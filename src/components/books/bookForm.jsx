@@ -1,12 +1,12 @@
 import { useState } from "react";
-// import Modal from 
+import Modal from "./modal"
 
 const BookForm = (props) => {
     const initialBookObject = {
         title: "",
         author: "",
-        image: "",
         description: "",
+        image: "",
         read: "",
         listName: ""
     }
@@ -43,40 +43,40 @@ const BookForm = (props) => {
                 valid: true,
                 message: ""
             })
-            props.setShowing(false)
+            props.setShowingForm(false)
             setNewBook(initialBookObject)
         }
     }
     const submitUpdateBook = (e) => {
         e.preventDefault();
         props.updateBook(props.book._id, updateBook);
-        props.setShowing(false);
+        props.setShowingForm(false);
     }
     const handleInputChange = props.isNewBook ? handleNewInputChange : handleEditInputChange
     const handleSubmitBook = props.isNewBook ? submitNewBook : submitUpdateBook
-    const book = props.isNewBook ? newBook : updateBook
+    const bookData = props.isNewBook ? newBook : updateBook
 
     return (
-        <Modal isOpen={props.showing}>
+        <Modal isOpen={props.showingForm}>
             <div className="book-form">
-                <button onClick={props.closeModal} className="outline-btn">X</button>
+                <button onClick={props.closeForm} className="outline-btn">X</button>
                 <form onSubmit={handleSubmitBook}>
                     {isValidState.valid ? null : <p className='form-error'>{isValidState.message}</p>}
                     {props.newBookServerError ? <p className='form-error'>{props.newBookServerError}</p> : null}
                     {/* TITLE */}
                     <label htmlFor="title">Book Title: </label>
-                    <input onChange={handleInputChange} type="text" name="title" value={book.title} />
+                    <input onChange={handleInputChange} type="text" name="title" value={bookData.title} />
                     {/* AUTHOR */}
                     <label htmlFor="author">Book Author: </label>
-                    <input onChange={handleInputChange} type="text" name="author" value={book.author} />
+                    <input onChange={handleInputChange} type="text" name="author" value={bookData.author} />
                     {/* DESCRIPTION */}
                     <label htmlFor="description">Book Description: </label>
-                    <input onChange={handleInputChange} type="text" name="description" value={book.description} />
+                    <input onChange={handleInputChange} type="text" name="description" value={bookData.description} />
                     {/* IMAGE */}
                     <label htmlFor="image">Image URL: </label>
-                    <input onChange={handleInputChange} type="text" name="image" value={book.image} />
+                    <input onChange={handleInputChange} type="text" name="image" value={bookData.image} />
                     {/* READ STATUS */}
-                    <select onChange={handleInputChange} name="read" required value={book.read} >
+                    <select onChange={handleInputChange} name="read" required value={bookData.read} >
                         <option value="" disabled>-Select-</option>
                         <option value="Read">Read</option>
                         <option value="Want to Read">Want to Read</option>
@@ -84,7 +84,7 @@ const BookForm = (props) => {
                     </select>
                     {/* LIST NAME */}
                     <label htmlFor="listName">List Name: </label>
-                    <input onChange={handleInputChange} type="text" name="listName" value={book.listName} />
+                    <input onChange={handleInputChange} type="text" name="listName" value={bookData.listName} />
                     <button type="submit" className="solid-btn">{props.buttonText}!</button>
                 </form>
             </div >
