@@ -4,12 +4,11 @@ import BookForm from "./bookForm";
 
 const BookShelf = (props) =>{
     const [showingBook, setShowingBook] = useState(false)
-    const [showingForm, setShowingForm] = useState(false);
     
     return (
         <>
             {/* HOVER EFFECT ON .book-img.view TO SHOW BUTTON */}
-            <div className="book-img view" style={{ backgroundImage: `url(${props.book.image})` }}></div>
+            <img className="book-img view" src={props.book.image} alt={props.book.title} />
             {/* HOVER EFFECT ON .view-btn OUTLINE >> SOLID */}
             <button onClick={() => setShowingBook(true)} className="view-btn">More Info</button>
             {/* showing = false until edit button clicked */}
@@ -17,7 +16,7 @@ const BookShelf = (props) =>{
                 <div className="book-view-modal">
                     <button onClick={() => setShowingBook(false)} className="outline-btn">X</button>
                     <div className="book-view-container">
-                        <div className="book-img view" style={{ backgroundImage: `url(${props.book.image})` }}></div>
+                        <img className="book-img view" src={props.book.image} alt={props.book.title} />
                         <div className="book-view-box">
                             <h3 className="book-text title">{props.book.title}</h3>
                             <p className="book-text author">Author: {props.book.author}</p>
@@ -27,16 +26,16 @@ const BookShelf = (props) =>{
                         </div>
                     </div>
                     {/* UPDATE/EDIT BUTTON */}
-                    <button onClick={() => setShowingForm(true)} className="outline-btn edit">Edit</button>
+                    <button onClick={() => props.setShowingForm(true)} className="outline-btn">Edit</button>
                     {/* UPDATE/EDIT FORM */}
                     <BookForm
                         key={props.book._id}
                         book={props.book}
                         updateBook={props.updateBook}
                         isNewBook={false}
-                        showingForm={showingForm}
-                        setShowingForm={setShowingForm}
-                        closeForm={() => setShowingForm(false)}
+                        showingForm={props.showingForm}
+                        setShowingForm={props.setShowingForm}
+                        closeForm={() => props.setShowingForm(false)}
                         buttonText={"Update"} 
                     />
                     {/* DELETE BUTTON */}

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import apiUrl from '../../apiConfig';
 // import Hero from "../hero";
+import SearchContainer from '../search/searchContainer';
 import NewBook from './newBook';
 import BookShelf from './bookShelf';
 
@@ -9,6 +10,7 @@ const BooksContainer =()=>{
     const [books, setBooks] = useState([]);
     const [requestError, setRequestError] = useState("");
     const [newBookServerError, setNewBookServerError] = useState("");
+    const [showingForm, setShowingForm] = useState(false);
 
     // GET ====================================================================================== //
     useEffect(() => {
@@ -97,11 +99,21 @@ const BooksContainer =()=>{
                 <div className="section-container">
                     <div className="btn-section">
                         {/* SEARCH BUTTON */}
-                        <Link to="/search" className="outline-btn">Search for Books!</Link>
+                        {/* <Link to="/books/search" className="outline-btn">Search for Books!</Link> */}
+                        <SearchContainer 
+                            books={books}
+                            setBooks={setBooks}
+                            createNewBook={createNewBook}
+                            newBookServerError={newBookServerError}
+                            showingForm={showingForm}
+                            setShowingForm={setShowingForm}
+                        />
                         {/* NEW BUTTON / NEW FORM */}
                         <NewBook 
                             createNewBook={createNewBook}
                             newBookServerError={newBookServerError}
+                            showingForm={showingForm}
+                            setShowingForm={setShowingForm}
                         />
                     </div>
                 </div>
@@ -118,6 +130,8 @@ const BooksContainer =()=>{
                                     updateBook={updateBook}
                                     deleteBook={deleteBook}
                                     requestError={requestError}
+                                    showingForm={showingForm}
+                                    setShowingForm={setShowingForm}
                                 /> 
                             })}
                         </div>
