@@ -10,33 +10,7 @@ const BooksContainer =()=>{
     const [books, setBooks] = useState([]);
     const [requestError, setRequestError] = useState("");
     const [newBookServerError, setNewBookServerError] = useState("");
-
-    const [googleBooksAPI, setGoogleBooksAPI] = useState([]);
-
-    const googleBooksURL = "https://www.googleapis.com/books/v1/volumes"
-    const myAPIKey = process.env.API_KEY
-
-    // GET : SEARCH GOOGLE BOOKS FORM ========================================================== //
-    const getBooksAPI = async (e) => {
-        e.preventDefault()
-        const querySearch = ""
-        // do I need to include '+' for spaces in querySearch?
-
-        try {
-            const googleBooksApiResponse = await fetch(`${googleBooksURL}?q=${querySearch}&key=${myAPIKey}`);
-            const parsedApiResponse = await googleBooksApiResponse.json();
-            setGoogleBooksAPI(parsedApiResponse.data);
-        } catch (err) {
-            console.log(err);
-        }
-    }
-    // SAVE 1 BOOK
-    // do I need a separate route? need to research how to save data from api search ^ and send it to db copying the newBook form parameters
-    // title = items[i].volumeInfo.title
-    // author(s) = items[i].volumeInfo.authors
-    // description = items[i].searchInfo.textSnippet
-    // image = items[i].volumeInfo.imageLinks.thumbnail
-
+    const [showingForm, setShowingForm] = useState(false);
 
     // GET ====================================================================================== //
     useEffect(() => {
@@ -125,12 +99,21 @@ const BooksContainer =()=>{
                 <div className="section-container">
                     <div className="btn-section">
                         {/* SEARCH BUTTON */}
-                        {/* <Link to="/search" className="outline-btn">Search for Books!</Link> */}
-                        <SearchContainer />
+                        {/* <Link to="/books/search" className="outline-btn">Search for Books!</Link> */}
+                        <SearchContainer 
+                            books={books}
+                            setBooks={setBooks}
+                            createNewBook={createNewBook}
+                            newBookServerError={newBookServerError}
+                            showingForm={showingForm}
+                            setShowingForm={setShowingForm}
+                        />
                         {/* NEW BUTTON / NEW FORM */}
                         <NewBook 
                             createNewBook={createNewBook}
                             newBookServerError={newBookServerError}
+                            showingForm={showingForm}
+                            setShowingForm={setShowingForm}
                         />
                     </div>
                 </div>
@@ -147,6 +130,8 @@ const BooksContainer =()=>{
                                     updateBook={updateBook}
                                     deleteBook={deleteBook}
                                     requestError={requestError}
+                                    showingForm={showingForm}
+                                    setShowingForm={setShowingForm}
                                 /> 
                             })}
                         </div>

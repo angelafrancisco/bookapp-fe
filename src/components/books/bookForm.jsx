@@ -3,13 +3,14 @@ import Modal from "./modal"
 
 const BookForm = (props) => {
     const initialBookObject = {
-        title: "",
-        author: "",
-        description: "",
-        image: "",
+        title: props.savedBook ? props.savedBook.volumeInfo.title : "",
+        author: props.savedBook ? props.savedBook.volumeInfo.authors.toString(", ") : "",
+        description: props.savedBook ? props.savedBook.searchInfo.textSnippet : "",
+        image: props.savedBook ? props.savedBook.volumeInfo.imageLinks.thumbnail : "",
         read: "",
         listName: ""
     }
+    console.log(props.savedBook)
     
     const [isValidState, setIsValidState] = useState({ valid: true, message: "" });
     const [newBook, setNewBook] = useState(initialBookObject);
@@ -64,18 +65,19 @@ const BookForm = (props) => {
                     {isValidState.valid ? null : <p className='form-error'>{isValidState.message}</p>}
                     {props.newBookServerError ? <p className='form-error'>{props.newBookServerError}</p> : null}
                     {/* TITLE */}
-                    <label htmlFor="title">Book Title: </label>
-                    <input onChange={handleInputChange} type="text" name="title" value={bookData.title} />
+                    <label htmlFor="title">Book Title:<span className='required-field'>*</span></label>
+                    <input onChange={handleInputChange} type="text" name="title" required value={bookData.title} />
                     {/* AUTHOR */}
-                    <label htmlFor="author">Book Author: </label>
-                    <input onChange={handleInputChange} type="text" name="author" value={bookData.author} />
+                    <label htmlFor="author">Book Author(s):<span className='required-field'>*</span></label>
+                    <input onChange={handleInputChange} type="text" name="author" required value={bookData.author} />
                     {/* DESCRIPTION */}
-                    <label htmlFor="description">Book Description: </label>
+                    <label htmlFor="description">Book Description:</label>
                     <input onChange={handleInputChange} type="text" name="description" value={bookData.description} />
                     {/* IMAGE */}
                     <label htmlFor="image">Image URL: </label>
                     <input onChange={handleInputChange} type="text" name="image" value={bookData.image} />
                     {/* READ STATUS */}
+                    <label htmlFor="read">Reading Status:<span className='required-field'>*</span></label>
                     <select onChange={handleInputChange} name="read" required value={bookData.read} >
                         <option value="" disabled>-Select-</option>
                         <option value="Read">Read</option>
