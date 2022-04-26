@@ -4,18 +4,16 @@ import Modal from "./modal"
 const BookForm = (props) => {
     const initialBookObject = {
         title: props.savedBook ? props.savedBook.volumeInfo.title : "",
-        author: props.savedBook ? props.savedBook.volumeInfo.authors.toString(", ") : "",
+        author: props.savedBook ? props.savedBook.volumeInfo.authors : "",
         description: props.savedBook ? props.savedBook.searchInfo.textSnippet : "",
         image: props.savedBook ? props.savedBook.volumeInfo.imageLinks.thumbnail : "",
         read: "",
         listName: ""
     }
-    console.log(props.savedBook)
-    
     const [isValidState, setIsValidState] = useState({ valid: true, message: "" });
     const [newBook, setNewBook] = useState(initialBookObject);
     const [updateBook, setUpdateBook] = useState(props.book);
-    
+
     const handleNewInputChange = (e) => {
         setNewBook({
             ...newBook,
@@ -55,8 +53,11 @@ const BookForm = (props) => {
     }
     const handleInputChange = props.isNewBook ? handleNewInputChange : handleEditInputChange
     const handleSubmitBook = props.isNewBook ? submitNewBook : submitUpdateBook
-    const bookData = props.isNewBook ? newBook : updateBook
 
+    const bookData = props.isNewBook ? newBook : updateBook;
+    if (props.showingForm) {
+        console.log(newBook)
+    }
     return (
         <Modal isOpen={props.showingForm}>
             <div className="book-form">
