@@ -6,7 +6,7 @@ const BookShelf = (props) =>{
     const [showingBook, setShowingBook] = useState(false)
     
     return (
-        <>
+        <div className="grid-box" key={props.book._id}>
             {/* HOVER EFFECT ON .book-img.view TO SHOW BUTTON */}
             <img className="book-img view" src={props.book.image} alt={props.book.title} />
             {/* HOVER EFFECT ON .view-btn OUTLINE >> SOLID */}
@@ -42,7 +42,7 @@ const BookShelf = (props) =>{
                     <button onClick={() => props.deleteBook(props.book._id)} className="solid-btn">Delete</button>
                 </div>
             </Modal>
-        </>
+        </div>
     )
 }
 
