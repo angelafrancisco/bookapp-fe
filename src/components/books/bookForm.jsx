@@ -4,7 +4,7 @@ import Modal from "./modal"
 const BookForm = (props) => {
     const initialBookObject = {
         title: props.savedBook ? props.savedBook.volumeInfo.title : "",
-        author: props.savedBook ? props.savedBook.volumeInfo.authors : "",
+        author: props.savedBook ? props.savedBook.volumeInfo.authors.join(", ") : "",
         description: props.savedBook ? props.savedBook.searchInfo.textSnippet : "",
         image: props.savedBook ? props.savedBook.volumeInfo.imageLinks.thumbnail : "",
         read: "",
@@ -55,9 +55,7 @@ const BookForm = (props) => {
     const handleSubmitBook = props.isNewBook ? submitNewBook : submitUpdateBook
 
     const bookData = props.isNewBook ? newBook : updateBook;
-    // if (props.showingForm) {
-    //     console.log(newBook)
-    // }
+
     return (
         <Modal isOpen={props.showingForm}>
             <div className="book-form">

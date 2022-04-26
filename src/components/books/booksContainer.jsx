@@ -95,13 +95,13 @@ const BooksContainer =()=>{
 
     return (
         <>
-            {/* <Hero/> */}
-            <div className="content-wrapper">
+            <div className="content-wrapper" key={"mybooks"}>
                 <div className="section-container">
                     <div className="btn-section">
                         {/* SEARCH BUTTON */}
                         {/* <Link to="/books/search" className="outline-btn">Search for Books!</Link> */}
-                        <SearchContainer 
+                        <SearchContainer
+                            key={"search"}
                             books={books}
                             setBooks={setBooks}
                             createNewBook={createNewBook}
@@ -111,6 +111,7 @@ const BooksContainer =()=>{
                         />
                         {/* NEW BUTTON / NEW FORM */}
                         <NewBook 
+                            key={"new"}
                             createNewBook={createNewBook}
                             newBookServerError={newBookServerError}
                             showingForm={showingForm}
@@ -121,12 +122,12 @@ const BooksContainer =()=>{
                 <div className="section-container">
                     {/* to do: add section for book suggestions here? */}
                     <h2 className="section-header">My Bookshelf</h2>
-                    <div className="section-container bookshelf">
                         {books.length > 0 ?
                                 <div className="grid-container bookshelf">
                                     {/* TO DO: SORT BOOKSHELF BY LIST NAME? OR READ STATUS? */}
                                     {books.map((book) => {
                                         return <BookShelf
+                                            key={book.id}
                                             book={book}
                                             updateBook={updateBook}
                                             deleteBook={deleteBook}
@@ -143,7 +144,6 @@ const BooksContainer =()=>{
                                 </div>
                             </div>
                         }
-                    </div>
                 </div>
             </div>
         </>

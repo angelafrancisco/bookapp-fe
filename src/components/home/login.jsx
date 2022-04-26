@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 
 const Login = (props) => {
     return (
-        <div className="Home">
-            <div className="content-wrapper">
-                <div className="login-container">
+            <div className="content-wrapper login">
+                <div className="content-container">
+                    <div className="text-box">
+                        <h1 className="heading">Welcome back to .readME!</h1>
+                    </div>
                     <div className="user-form login">
                         <h3>Sign in to your account</h3>
                         <form>
@@ -17,8 +19,7 @@ const Login = (props) => {
                         </form>
                     </div>
                 </div>
-            </div>  
-        </div>
+            </div>
     )
 }
 

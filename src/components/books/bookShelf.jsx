@@ -7,16 +7,16 @@ const BookShelf = (props) =>{
     
     return (
         <div className="grid-box" key={props.book._id}>
-            {/* HOVER EFFECT ON .book-img.view TO SHOW BUTTON */}
-            <img className="book-img view" src={props.book.image} alt={props.book.title} />
-            {/* HOVER EFFECT ON .view-btn OUTLINE >> SOLID */}
-            <button onClick={() => setShowingBook(true)} className="view-btn">More Info</button>
+            <img className="book-img view" src={props.book.image || "./img/book-default.jpeg"} alt={props.book.title} />
+            <div className="grid-box-btn">
+                <button onClick={() => setShowingBook(true)} className="view-btn">More Info</button>
+            </div>
             {/* showing = false until edit button clicked */}
             <Modal isOpen={showingBook}>
                 <div className="book-view-modal">
                     <button onClick={() => setShowingBook(false)} className="outline-btn">X</button>
                     <div className="book-view-container">
-                        <img className="book-img view" src={props.book.image} alt={props.book.title} />
+                        <img className="book-img view" src={props.book.image || "./img/book-default.jpeg"} alt={props.book.title} />
                         <div className="book-view-box">
                             <h3 className="book-text title">{props.book.title}</h3>
                             <p className="book-text author">Author: {props.book.author}</p>
