@@ -11,6 +11,7 @@ const BooksContainer =()=>{
     const [requestError, setRequestError] = useState("");
     const [newBookServerError, setNewBookServerError] = useState("");
     const [showingForm, setShowingForm] = useState(false);
+    const [showingSearchForm, setShowingSearchForm] = useState(false) 
 
     // GET ====================================================================================== //
     useEffect(() => {
@@ -105,8 +106,8 @@ const BooksContainer =()=>{
                             setBooks={setBooks}
                             createNewBook={createNewBook}
                             newBookServerError={newBookServerError}
-                            showingForm={showingForm}
-                            setShowingForm={setShowingForm}
+                            showingSearchForm={showingSearchForm}
+                            setShowingSearchForm={setShowingSearchForm}
                         />
                         {/* NEW BUTTON / NEW FORM */}
                         <NewBook 
