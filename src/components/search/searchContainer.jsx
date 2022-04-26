@@ -50,7 +50,7 @@ const SearchContainer = (props) =>{
                                         <h3 className="book-text title">Title: {book.volumeInfo.title}</h3>
                                         <p className="book-text author">Author(s): {book.volumeInfo.authors.toString(", ")}</p>
                                         <p className="book-text desc">Description: {book.searchInfo.textSnippet}</p>
-                                        <p className="book-text link"><a href={book.volumeInfo.previewLink} target="_blank">Book Preview on Google Books</a></p>
+                                        <p className="book-text link"><a href={book.volumeInfo.previewLink} target="_blank" rel="noreferrer noopener">Book Preview on Google Books</a></p>
                                         <button onClick={() => props.setShowingForm(true)} className="outline-btn save">Save to My Books!</button>
                                     </div>
                                     <BookForm
