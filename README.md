@@ -19,24 +19,27 @@ Hosted via Heroku: https://readme-bookapp.herokuapp.com/
 
 
 ## Repositories
-    - Front-End: https://github.com/angelafrancisco/bookapp-fe
-    - Back-End: https://github.com/angelafrancisco/bookapp-be
 
-<!-- 
+- Front-End: https://github.com/angelafrancisco/bookapp-fe
+- Back-End: https://github.com/angelafrancisco/bookapp-be
+
+
 ## User Stories
 
 - Homepage shows app features and links to login or register an account.
 - User can create a new account and/or login.
-- User can add plants to their "My Plants" section, creating a name, adding plant type, image url, room name, window direction, and notes about plant.
-- Once a plant is added, user can edit or delete plant.
-- User can complete watering tasks in their "My Tasks" section, as they are auto-generated after creating a new plant.
-- User can add a plant status for any plant, adding status date, plant health (poor/good/excellent), and notes. Status can be edited or deleted. -->
+- User can add books to their "My Bookshelf" section, adding:
+    - Book title, author(s), description, image url, read status (read/ want to read/ currently reading), and adding book to a custom list.
+- Once a book is added, it will show the cover image on the "My Bookshelf" section, and user can click to edit or delete a specific book.
+- User can search for a book by title or author (via Google Books API) and see results.
+- User can save a book from the search results along with including book status and custom book list, and it will show on the "My Bookshelf" section.
+
 
 
 ## Wireframing
 
 - Homepage (Images here)
-- Favorites (Images here)
+- Bookshelf (Images here)
 - Search (Images here)
 
 
@@ -67,7 +70,14 @@ const bookSchema = new Schema({
     author: { type: String }
     description: { type: String }
     image: { type: String }
-    read: { type: Boolean }
+    read: read: { 
+        type: String,
+        enum: [
+            "Read",
+            "Want to Read",
+            "Currently Reading"
+        ]
+    },
     listName: { type: String }
 }, { timestamps: true })
 ```
