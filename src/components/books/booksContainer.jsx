@@ -118,31 +118,32 @@ const BooksContainer =()=>{
                         />
                     </div>
                 </div>
-                <div className="section-container bookshelf">
+                <div className="section-container">
                     {/* to do: add section for book suggestions here? */}
                     <h2 className="section-header">My Bookshelf</h2>
-                    {books.length > 0 ?
-                        <div className="grid-container bookshelf">
-                            {/* TO DO: SORT BOOKSHELF BY LIST NAME? OR READ STATUS? */}
-                            {books.map((book) => {
-                                return <BookShelf
-                                    key={book._id}
-                                    book={book}
-                                    updateBook={updateBook}
-                                    deleteBook={deleteBook}
-                                    requestError={requestError}
-                                    showingForm={showingForm}
-                                    setShowingForm={setShowingForm}
-                                /> 
-                            })}
-                        </div>
-                    :
-                        <div className="grid-container no-books">
-                            <div className="message-box">
-                                <h3 className="message-text">Looks like you haven't added any books yet!</h3>
+                    <div className="section-container bookshelf">
+                        {books.length > 0 ?
+                                <div className="grid-container bookshelf">
+                                    {/* TO DO: SORT BOOKSHELF BY LIST NAME? OR READ STATUS? */}
+                                    {books.map((book) => {
+                                        return <BookShelf
+                                            book={book}
+                                            updateBook={updateBook}
+                                            deleteBook={deleteBook}
+                                            requestError={requestError}
+                                            showingForm={showingForm}
+                                            setShowingForm={setShowingForm}
+                                        /> 
+                                    })}
+                                </div>
+                        :
+                            <div className="grid-container bookshelf">
+                                <div className="message-box no-books">
+                                    <h3 className="message-text">Looks like you haven't added any books yet!</h3>
+                                </div>
                             </div>
-                        </div>
-                    }
+                        }
+                    </div>
                 </div>
             </div>
         </>

@@ -1,13 +1,48 @@
+.Home {
+    background: url('../../public/img/background-books.jpg') fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .content-wrapper {
     background-color: var(--bg-color-tan);
-    min-height: 70vh;
+    min-height: 75vh;
+    margin: 0 20em 0 20em;
     padding-bottom: 300px;
-    /* display: flex;
-    justify-content: center;
-    align-items: flex-start; */
-    
 }
 
 .heading {
     text-align: center;
+}
+
+.section-container.bookshelf {
+    background: url('../../public/img/bookshelf-empty-background.jpg');
+    background-position: top;
+    background-repeat: repeat-y;
+    padding: 10px;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.grid-container.bookshelf {
+    /* z-index: 2; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px 110px 0 110px;
+    text-align: center;
+}
+
+.grid-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-img.view {
+    height: 170px;
+    width: 100px;
 }

@@ -55,9 +55,9 @@ const BookForm = (props) => {
     const handleSubmitBook = props.isNewBook ? submitNewBook : submitUpdateBook
 
     const bookData = props.isNewBook ? newBook : updateBook;
-    if (props.showingForm) {
-        console.log(newBook)
-    }
+    // if (props.showingForm) {
+    //     console.log(newBook)
+    // }
     return (
         <Modal isOpen={props.showingForm}>
             <div className="book-form">
