@@ -3,7 +3,6 @@ import Features from "./features";
 
 const Home = () => {
     return (
-        <div className="Home">
             <div className="content-wrapper">
                 <div className="content-container">
                     <div className="left-text-box">
@@ -13,7 +12,6 @@ const Home = () => {
                 </div>
                 <Features/>
             </div>
-        </div>
     )
 }
 

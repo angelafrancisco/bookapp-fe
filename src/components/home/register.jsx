@@ -2,13 +2,12 @@ import { Link } from "react-router-dom";
 
 const Register = (props) => {
     return (
-        <div className="Home">
-            <div className="content-wrapper">
-                <div className="login-container">
-                    <div className="left-text-box">
-                        <h1 className="register-heading">Join the .readME book community today!</h1>
+            <div className="content-wrapper register">
+                <div className="content-container">
+                    <div className="text-box">
+                        <h1 className="heading">Join the .readME book community today!</h1>
                     </div>
-                    <div className="user-form new">
+                    <div className="user-form register">
                         <h3>Sign up for a free account</h3>
                         <form>
                             <label htmlFor="username">Username: </label>
@@ -21,7 +20,6 @@ const Register = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 

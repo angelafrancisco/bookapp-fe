@@ -19,6 +19,9 @@
   color: black;
   min-height: 100vh;
   position: relative;
+  background: url('../public/img/background-books.jpg') fixed;
+  background-position: top;
+  background-repeat: no-repeat;
 }
 
 a {
@@ -57,17 +60,6 @@ button.solid-btn,
 button.outline-btn {
   width: 130px;
   margin: 20px;
-}
-
-.hero {
-  /* background-image: url("/public/images/hero.jpg"); */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .modal {

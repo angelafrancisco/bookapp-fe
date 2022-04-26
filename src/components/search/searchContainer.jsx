@@ -2,9 +2,10 @@ import { useState } from 'react';
 import BookForm from '../books/bookForm';
 
 const SearchContainer = (props) => {
-    const [bookResults, setBookResults] = useState([]);
     const [searchInput, setSearchInput] = useState("");
-    const [saveBook, setSaveBook] = useState()
+    const [bookResults, setBookResults] = useState([]);
+    const [saveBook, setSaveBook] = useState();
+    const [searchError, setSearchError] = useState({ valid: false, message: "" });
 
     const googleBooksURL = "https://www.googleapis.com/books/v1/volumes"
     // const myAPIKey = process.env.API_KEY
@@ -23,15 +24,31 @@ const SearchContainer = (props) => {
     // GET : SEARCH GOOGLE BOOKS FORM ========================================================== //
     const submitAPISearch = async (e) => {
         e.preventDefault()
-        const googleBooksApiResponse = await fetch(`${googleBooksURL}?q=${searchInput}&${filter}`);
-        const parsedApiResponse = await googleBooksApiResponse.json();
-        // console.log(parsedApiResponse.items)
-        setBookResults(parsedApiResponse.items);
+        try {
+            const googleBooksApiResponse = await fetch(`${googleBooksURL}?q=${searchInput}&${filter}`);
+            const parsedApiResponse = await googleBooksApiResponse.json();
+            // console.log(parsedApiResponse.items)
+            if (!parsedApiResponse.items || parsedApiResponse.items.length === 0){
+                setSearchError({
+                    valid: true,
+                    message: "There are no results at this time. Try searching again."
+                })
+            }else{
+                setSearchError({
+                    valid: false,
+                    message: ""
+                })
+                setBookResults(parsedApiResponse.items);
+            }
+        }catch (err) {
+            console.log(err)
+        }
     }
     const selectOneBook = (thisBook) => {
         setSaveBook(thisBook);
         props.setShowingSearchForm(true);
     }
+// console.log(searchError.valid, bookResults.length)
 
     return (
         <>
@@ -42,19 +59,17 @@ const SearchContainer = (props) => {
             </form>
             <div className="section-container search">
                 {bookResults?.length <= 0 ?
-                    <div className="message-box">
-                        <h3 className="message-text">There are no results at this time. Try searching again.</h3>
-                    </div>
-                    :
+                    searchError.valid ? <div className="message-box"><h3 className="message-text">{searchError.message}</h3></div> : null
+                :
                     <>
                         {bookResults.map((book) => {
                             return (
                                 <div className="section-container results" key={book.id}>
-                                    <img className="book-img results" src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} />
+                                    <img className="book-img results" src={book.volumeInfo.imageLinks?.thumbnail || "./img/book-default.jpeg"} alt={book.volumeInfo.title} />
                                     <div className="book-box results">
                                         <h3 className="book-text title">Title: {book.volumeInfo.title}</h3>
-                                        <p className="book-text author">Author(s): {book.volumeInfo.authors}</p>
-                                        <p className="book-text desc">Description: {book.searchInfo.textSnippet}</p>
+                                        <p className="book-text author">Author(s): {book.volumeInfo.authors.join(", ")}</p>
+                                        <p className="book-text desc">Description: {book.searchInfo?.textSnippet || ""}</p>
                                         <p className="book-text link"><a href={book.volumeInfo.previewLink} target="_blank" rel="noreferrer noopener">Book Preview on Google Books</a></p>
                                         <button onClick={() => selectOneBook(book)} className="outline-btn save">Save to My Books!</button>
                                     </div>
@@ -65,6 +80,7 @@ const SearchContainer = (props) => {
                 }
                 {saveBook && (
                     <BookForm
+                        key={"savedbook"}
                         savedBook={saveBook}
                         isNewBook={true}
                         createNewBook={props.createNewBook}
