@@ -9,7 +9,7 @@ const Header = (props) => {
     return (
         <nav>
             <div className="nav-container">
-                <Link to="/" className="Logo"><img src="img/favicon.ico" alt="Logo" />.readME</Link>
+                <Link to="/" className="nav-logo"><img src="favicon.ico" alt="Logo" />.readME</Link>
             </div>
             <div className="nav-container">
                 {/* mobile hamburger nav */}
@@ -19,7 +19,6 @@ const Header = (props) => {
                     <div className="nav-hamburger bar3"></div>
                 </div>
                 {props.isLoggedIn ?
-                    // user logged in nav links
                     <ul className="nav-links-list isloggedin">
                         <li><Link to="/books" className="nav-link">Home</Link></li>
                         <li><Link to="/books" className="nav-link">My Books</Link></li>
@@ -27,10 +26,8 @@ const Header = (props) => {
                         <li><Link to="/" className="logout"><button onClick={() => props.setIsLoggedIn(false)} className="solid-btn">Logout</button></Link></li>
                     </ul>
                     :
-                    // not logged in nav links
                     <ul className="nav-links-list guest">
                         <li><Link to="/" className="nav-link">Features</Link></li>
-                        <li><Link to="/" className="nav-link">Community</Link></li>
                         <li><Link to="/" className="nav-link">About</Link></li>
                         <li><Link to="/login" className="outline-btn">Login</Link></li>
                         <li><Link to="/register" className="solid-btn">Register</Link></li>

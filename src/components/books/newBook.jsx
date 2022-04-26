@@ -1,8 +1,6 @@
-import { useState } from "react";
 import BookForm from "./bookForm";
 
 const NewBook = (props) =>{
-
     return (
         <>
             <button onClick={() => props.setShowingForm(true)} className="solid-btn">Add a Book!</button>
