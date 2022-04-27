@@ -44,6 +44,7 @@ const BookForm = (props) => {
             })
             props.setShowingForm(false)
             setNewBook(initialBookObject)
+            props.clearSearchResults()
         }
     }
     const submitUpdateBook = (e) => {

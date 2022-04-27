@@ -27,8 +27,8 @@ const Header = (props) => {
                     </ul>
                     :
                     <ul className="nav-links-list guest">
-                        <li><Link to="/" className="nav-link">Features</Link></li>
                         <li><Link to="/" className="nav-link">About</Link></li>
+                        <li><Link to="/login" className="nav-link">Search</Link></li>
                         <li><Link to="/login" className="outline-btn">Login</Link></li>
                         <li><Link to="/register" className="solid-btn">Register</Link></li>
                     </ul>

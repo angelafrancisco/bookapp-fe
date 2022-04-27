@@ -17,6 +17,7 @@
 
 .App {
   color: black;
+  text-align: center;
   min-height: 100vh;
   position: relative;
   background: url('../public/img/background-books.jpg') fixed;

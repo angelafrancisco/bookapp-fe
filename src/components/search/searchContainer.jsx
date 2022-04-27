@@ -50,13 +50,22 @@ const SearchContainer = (props) => {
     }
 // console.log(searchError.valid, bookResults.length)
 
+    // function to clear page after searching and remove search input text
+    const clearSearchResults = ()=> {
+        setBookResults([]);
+        setSearchInput("");
+    }
+
     return (
         <>
-            <form onSubmit={submitAPISearch}>
-                <label htmlFor="search">Book Search: </label>
-                <input onChange={handleSearch} type="text" value={searchInput} placeholder="Search for title or author here..." />
-                <button type="submit" className="solid-btn">Search!</button>
-            </form>
+            <div className="section-container search-form">
+                <form onSubmit={submitAPISearch}>
+                    <label htmlFor="search">Book Search: </label>
+                    <input onChange={handleSearch} type="text" value={searchInput} placeholder="Search for title or author here..." />
+                    <button type="submit" className="solid-btn">Search!</button>
+                </form>
+                <button onClick={clearSearchResults} className="outline-btn">Clear Search</button>
+            </div>
             <div className="section-container search">
                 {bookResults?.length <= 0 ?
                     searchError.valid ? <div className="message-box"><h3 className="message-text">{searchError.message}</h3></div> : null
@@ -89,6 +98,7 @@ const SearchContainer = (props) => {
                         setShowingForm={props.setShowingSearchForm}
                         closeForm={() => props.setShowingSearchForm(false)}
                         buttonText={"Save Book"}
+                        clearSearchResults={clearSearchResults}
                     />
                 )}
             </div>

@@ -13,13 +13,13 @@ const Footer = () => {
                     </ul>
                     <ul className="footer-links-list social">
                         <li>
+                            <Link to="/" className="footer-link email"><i className="fa-solid fa-envelope fa-2xl fa-inverse"></i></Link>
+                        </li>
+                        <li>
                             <Link to="/" className="footer-link insta"><i className="fa-brands fa-instagram fa-2xl fa-inverse"></i></Link>
                         </li>
                         <li>
                             <Link to="/" className="footer-link fb"><i className="fa-brands fa-facebook-square fa-2xl fa-inverse"></i></Link>
-                        </li>
-                        <li>
-                            <Link to="/" className="footer-link email"><i className="fa-solid fa-envelope fa-2xl fa-inverse"></i></Link>
                         </li>
                         <li>
                             <Link to="https://github.com/angelafrancisco/bookapp-fe" className="footer-link github"><i className="fa-brands fa-github-square fa-2xl fa-inverse"></i></Link>
