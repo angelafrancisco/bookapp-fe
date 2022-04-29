@@ -38,7 +38,7 @@ const BooksContainer =()=>{
                 }
             })
             const parsedResponse = await apiResponse.json();
-            console.log(parsedResponse);
+            // console.log(parsedResponse);
             if (parsedResponse.success) {
                 setBooks([...books, newBook]);
             } else {
@@ -79,7 +79,7 @@ const BooksContainer =()=>{
                 method: "DELETE"
             })
             const parsedResponse = await apiResponse.json();
-            console.log(parsedResponse);
+            // console.log(parsedResponse);
             if (parsedResponse.success) {
                 const newBooks = books.filter(book => book._id !== idToDelete);
                 setBooks(newBooks);
