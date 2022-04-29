@@ -5,7 +5,7 @@ const Login = (props) => {
             <div className="content-wrapper login">
                 <div className="content-container">
                     <div className="content-box login">
-                        <h1 className="heading">Welcome back to .readME!</h1>
+                        <h1 className="heading login">Welcome back to .readME!</h1>
                         <div className="user-form login">
                             <h3>Sign in to your account</h3>
                             <form>

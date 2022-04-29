@@ -18,43 +18,44 @@
     align-items: center;
 
     .content-box {
-        flex-direction: column;
-        align-items: flex-start;
+        &.home, &.login, &.register {
+            flex-direction: column;
+            margin: 30px auto;
+        }
+        &.home {
+            align-items: flex-start;
+        }
+    }
+    
+    .user-form {
+        background-color: $color-white;
+        margin: 40px;
+        padding: 10px 30px;
 
-        &.register, &.login {
-            align-items: center;
+        h3 {
+            padding: 20px 0;
         }
 
-        .user-form {
-            background-color: $color-white;
-            margin: 50px;
-            padding: 40px;
+        input {
+            margin: 5px;
+            height: 30px;
+        }
 
-            h3 {
-                padding: 20px 0;
-            }
-
+        .form-wide {
             input {
-                margin: 5px;
-                height: 30px;
-            }
+                width: auto;
 
-            .form-wide {
-                input {
-                    width: auto;
-
-                    @media (min-width: 480px) {
-                        width: 385px;
-                    }
+                @media (min-width: 480px) {
+                    width: 385px;
                 }
             }
+        }
 
-            .user-form-btn {
-                margin: 0;
+        .user-form-btn {
+            margin: 0;
 
-                .solid-btn {
-                    margin-left: 5px;
-                }
+            .solid-btn {
+                margin-left: 5px;
             }
         }
     }
@@ -82,10 +83,92 @@
             }
         }
     }
-}
-.heading {
-    padding: 50px 20px 0 20px;
-    text-align: center;
+
+    &.search {
+        flex-direction: column;
+        margin: 20px;
+
+        .search-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            input {
+                margin: auto -1px;
+                padding: 5px;
+                height: 20px;
+                border: $border-blue;
+            }
+            .solid-btn {
+                width: 45px;
+    
+                &.search{
+                    width: 37px;
+                    height: 37px;
+                    font-size: 24px;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    
+                    .fa-magnifying-glass {
+                        margin: 6px 5px 0 6px;
+                    }
+    
+                    .triangle-r {
+                        width: 0;
+                        height: 0;
+                        border-top: 18px solid transparent;
+                        border-left: 18px solid $color-blue;
+                        border-bottom: 18px solid transparent;
+                        margin-top: 1px;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+        .clear-search {
+            height: 25px;
+            width: 100px;
+            margin-top: 5px;
+            padding: 0;
+            font-size: 11px;
+        }
+    }
+
+    &.results {
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: $color-white;
+        margin: 20px auto;
+        padding: 10px;
+
+        .content-box.top {
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .content-box.bottom {
+            padding: 5px;
+            align-items: flex-start;
+        }
+
+        .book-box-results {
+            margin: 10px;
+
+            &.detail {  
+                margin-top: 0;
+                
+                @media (min-width: 810px) {
+                    width: 700px;
+                }
+            }
+        }
+        
+        .book-text.link {
+            margin: 10px auto;
+        }
+    }
 }
 
 .grid-container.bookshelf {
@@ -107,7 +190,7 @@
     align-items: center;
 }
 
-.book-img.view {
+.book-img {
     height: 190px;
     width: 120px;
 }

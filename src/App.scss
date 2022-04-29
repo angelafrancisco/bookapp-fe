@@ -85,3 +85,15 @@ button {
   height: 1px;
   overflow: hidden;
 }
+
+.bold-text {
+  font-weight: 800;
+}
+
+.heading {
+  padding: 50px 20px 20px 20px;
+
+  &.login, &.register {
+    text-align: center;
+  }
+}

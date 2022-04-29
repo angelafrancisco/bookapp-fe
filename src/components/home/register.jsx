@@ -5,7 +5,7 @@ const Register = (props) => {
             <div className="content-wrapper register">
                 <div className="content-container">
                     <div className="content-box register">
-                        <h1 className="heading">Find your next book with .readME</h1>
+                        <h1 className="heading register">Find your next book with .readME</h1>
                         <div className="user-form register">
                             <h3>Sign up for a free account</h3>
                             <form>
