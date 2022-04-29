@@ -1,0 +1,74 @@
+@import './variables.scss';
+
+footer {
+    min-height: 200px;
+    border-top: $color-blue;
+    background-color: $color-blue;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    
+    .footer-wrapper {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .footer-container, 
+    .footer-wrapper,
+    .footer-links-section,
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-container,
+    .footer-wrapper {
+        flex-direction: column;
+    }
+
+    .footer-container {
+        @media (min-width: 480px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    .footer-links-section, 
+    .footer-logo {
+        justify-content: space-around;
+    }
+
+    .footer-links-list {
+        list-style-type: none;
+        padding: 0px;
+        margin: 20px 0;
+        
+        &.social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .footer-text {
+            font-size: smaller;
+            margin: 0 20px;
+        }
+    }
+
+    .horizontal-line {
+        background-color: $color-white;
+        height: 1px;
+        width: 90%;
+        margin: 20px 0;
+    }
+    
+    .footer-link, .footer-logo, .footer-text {
+        color: $color-white
+    }
+}

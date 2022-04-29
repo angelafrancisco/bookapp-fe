@@ -1,15 +1,12 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/header'
+import Footer from './components/footer'
 import Home from './components/home/home';
 import Register from './components/home/register';
 import Login from './components/home/login';
 import BooksContainer from './components/books/booksContainer';
-import Footer from './components/footer'
-import './App.css';
-import './styles/header.css';
-import './styles/components.css';
-import './styles/footer.css';
+import './App.scss';
 
 function App() {
   // user backend not complete, useState will act as temporary login
