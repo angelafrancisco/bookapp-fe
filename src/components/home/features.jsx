@@ -1,6 +1,6 @@
 const Features = () => {
     return (
-        <div className="features-container">
+        <div className="content-container features">
             <h2 className="home-sub-heading">Search for books, create custom book lists, get book recommendations and more!</h2>
             <div className="features-grid">
                 <div className="single-feature-box">
