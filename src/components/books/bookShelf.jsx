@@ -5,6 +5,11 @@ import BookForm from "./bookForm";
 const BookShelf = (props) =>{
     const [showingBook, setShowingBook] = useState(false)
     
+    const deleteAndCloseModal = () => {
+        props.deleteBook(props.book._id)
+        setShowingBook(false)
+    }
+
     return (
         <div className="grid-box" key={props.book._id}>
             <img className="book-img view" src={props.book.image || "./img/book-default.jpeg"} alt={props.book.title} />
@@ -39,7 +44,7 @@ const BookShelf = (props) =>{
                         buttonText={"Update"} 
                     />
                     {/* DELETE BUTTON */}
-                    <button onClick={() => props.deleteBook(props.book._id)} className="solid-btn">Delete</button>
+                    <button onClick={deleteAndCloseModal} className="solid-btn">Delete</button>
                 </div>
             </Modal>
         </div>

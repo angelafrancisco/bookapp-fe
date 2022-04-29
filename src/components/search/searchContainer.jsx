@@ -58,30 +58,36 @@ const SearchContainer = (props) => {
 
     return (
         <>
-            <div className="section-container search-form">
-                <form onSubmit={submitAPISearch}>
-                    <label htmlFor="search">Book Search: </label>
-                    <input onChange={handleSearch} type="text" value={searchInput} placeholder="Search for title or author here..." />
-                    <button type="submit" className="solid-btn">Search!</button>
+            <div className="content-container search">
+                <form onSubmit={submitAPISearch} className="search-form">
+                    <label htmlFor="search" className="solid-btn">Search</label>
+                    <input onChange={handleSearch} type="text" value={searchInput} placeholder="Book title or author..." />
+                    <button type="submit" className="solid-btn search"><i className="fa-solid fa-magnifying-glass fa-inverse fa-flip-horizontal"></i><span className="triangle-r"></span></button>
                 </form>
-                <button onClick={clearSearchResults} className="outline-btn">Clear Search</button>
+                <button onClick={clearSearchResults} className="outline-btn clear-search">Clear Search</button>
             </div>
-            <div className="section-container search">
+            <div className="content-container search">
                 {bookResults?.length <= 0 ?
                     searchError.valid ? <div className="message-box"><h3 className="message-text">{searchError.message}</h3></div> : null
                 :
                     <>
                         {bookResults.map((book) => {
                             return (
-                                <div className="section-container results" key={book.id}>
-                                    <img className="book-img results" src={book.volumeInfo.imageLinks?.thumbnail || "./img/book-default.jpeg"} alt={book.volumeInfo.title} />
-                                    <div className="book-box results">
-                                        <h3 className="book-text title">Title: {book.volumeInfo.title}</h3>
-                                        <p className="book-text author">Author(s): {book.volumeInfo.authors.join(", ")}</p>
-                                        <p className="book-text desc">Description: {book.searchInfo?.textSnippet || ""}</p>
-                                        <p className="book-text link"><a href={book.volumeInfo.previewLink} target="_blank" rel="noreferrer noopener">Book Preview on Google Books</a></p>
-                                        <button onClick={() => selectOneBook(book)} className="outline-btn save">Save to My Books!</button>
+                                <div className="content-container results" key={book.id}>
+                                    <div className="content-box top">
+                                        <div className="book-box-results">
+                                            <h3 className="book-text">Title: {book.volumeInfo.title}</h3>
+                                            <p className="book-text"><span className="bold-text">Author(s): </span>{book.volumeInfo.authors?.join(", ") || ""}</p>
+                                        </div>
+                                        <button onClick={() => selectOneBook(book)} className="solid-btn save">Save to My Books!</button>
                                     </div>
+                                    <div className="content-box bottom">
+                                        <img className="book-img" src={book.volumeInfo.imageLinks?.thumbnail || "./img/book-default.jpeg"} alt={book.volumeInfo.title} />
+                                        <div className="book-box-results detail">
+                                            <p className="book-text description"><span className="bold-text">Description: </span><br />{book.searchInfo?.textSnippet || ""}</p>
+                                        </div>
+                                    </div>
+                                    <p className="book-text link"><a href={book.volumeInfo.previewLink} target="_blank" rel="noreferrer noopener">Preview on Google Books</a></p>
                                 </div>
                             )
                         })}

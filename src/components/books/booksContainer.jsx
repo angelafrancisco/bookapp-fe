@@ -96,7 +96,7 @@ const BooksContainer =()=>{
     return (
         <>
             <div className="content-wrapper" key={"mybooks"}>
-                <div className="section-container">
+                <div className="content-container">
                     <div className="btn-section">
                         {/* SEARCH BUTTON */}
                         {/* <Link to="/books/search" className="outline-btn">Search for Books!</Link> */}
@@ -119,9 +119,9 @@ const BooksContainer =()=>{
                         />
                     </div>
                 </div>
-                <div className="section-container">
+                <div className="content-container">
                     {/* to do: add section for book suggestions here? */}
-                    <h2 className="section-header">My Bookshelf</h2>
+                    <h2 className="heading">My Bookshelf</h2>
                         {books.length > 0 ?
                                 <div className="grid-container bookshelf">
                                     {/* TO DO: SORT BOOKSHELF BY LIST NAME? OR READ STATUS? */}
