@@ -1,4 +1,4 @@
-# .readME Book App: Capstone Project (MERN Full-Stack App)
+# .readME Book App: MERN Full-Stack App
 
 **Week 11-12: April 2022. Final Capstone Project for General Assembly.**
 
@@ -20,8 +20,10 @@ https://readme-bookapp.herokuapp.com/
 
 ## Repositories
 
-- Front-End: https://github.com/angelafrancisco/bookapp-fe
-- Back-End: https://github.com/angelafrancisco/bookapp-be
+- Front-End (currently here):
+    - https://github.com/angelafrancisco/bookapp-fe
+- Back-End:
+    - https://github.com/angelafrancisco/bookapp-be
 
 
 ## User Stories
@@ -37,9 +39,19 @@ https://readme-bookapp.herokuapp.com/
 
 ## Wireframing
 
-- Homepage (Images here)
-- Bookshelf (Images here)
-- Search (Images here)
+Homepage
+
+<img src="public/img/Wireframing - Home.png">
+
+\
+Login/Register
+
+<img src="public/img/Wireframing - Register.png">
+
+\
+Bookshelf
+
+<img src="public/img/Wireframing-Books.png">
 
 
 ## Capstone Project MVP Goals:
@@ -62,9 +74,11 @@ https://readme-bookapp.herokuapp.com/
 
 ## Future Features:
 
+- Improved Accessibility
 - Book recommendations (vacation reads, YA fantasy series, etc.)
 - Organize books by custom list name
     - Show first 3-4 books, link to see full list on new page
+- User model and authentication (currently created a temporary "login" React state)
 
 
 ## Model
