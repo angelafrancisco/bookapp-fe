@@ -1,18 +1,18 @@
-# Capstone Project: MERN Full-Stack App
+# .readME Book App: Capstone Project (MERN Full-Stack App)
 
 **Week 11-12: April 2022. Final Capstone Project for General Assembly.**
 
-.ReadMe book app: A full-stack MERN (React, Node/Express, MongoDB) web application to search and save books for vacation, fun, or anytime you need a reminder of what your next book should be!
-<!-- App name ideas: Bookasauraus Recs, BookWorm, Book-Hook-Up, .ReadMe -->
+.readMe book app: A full-stack MERN (React, Node/Express, MongoDB) web application to search and save books for vacation, fun, or anytime you need a reminder of what your next book should be!
 
 ## Deployed Website
 
-Hosted via Heroku: https://readme-bookapp.herokuapp.com/
+Hosted via Heroku:\
+https://readme-bookapp.herokuapp.com/
 
 
 ## Technology (MERN Stack)
 
-- HTML | CSS | Javascript
+- HTML | CSS | SASS | Javascript
 - React
 - Node | Express
 - MongoDB | Mongoose
@@ -35,7 +35,6 @@ Hosted via Heroku: https://readme-bookapp.herokuapp.com/
 - User can save a book from the search results along with including book status and custom book list, and it will show on the "My Bookshelf" section.
 
 
-
 ## Wireframing
 
 - Homepage (Images here)
@@ -55,11 +54,17 @@ Hosted via Heroku: https://readme-bookapp.herokuapp.com/
 
 ## Capstone Project Stretch Goals:
 
+- SASS
 - Responsive Design
 - React Router Links
+- Saving API book results to "My Bookshelf"
+
+
+## Future Features:
+
+- Book recommendations (vacation reads, YA fantasy series, etc.)
 - Organize books by custom list name
     - Show first 3-4 books, link to see full list on new page
-- Book recommendations (vacation reads, YA fantasy series, etc.)
 
 
 ## Model
@@ -86,9 +91,10 @@ const bookSchema = new Schema({
 
 In the project directory, you can run:
 
-### `npm start`
+`npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
