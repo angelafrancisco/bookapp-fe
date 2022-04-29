@@ -1,15 +1,7 @@
-:root {
-  --link-color: rgb(0, 163, 184);
-  --border-color: 1px solid rgb(0, 163, 184);
-  --border-white: 1px solid white;
-  --bg-color-tan: rgb(236, 230, 216, 0.8);
-  --bg-color-blue: rgb(0, 163, 184);
-  --btn-radius: 5px;
-  --btn-outline-bg: white;
-  --btn-outline-text: rgb(0, 163, 184);
-  --btn-solid-bg: rgb(0, 163, 184);
-  --btn-solid-text: white;
-}
+@import './styles/variables.scss';
+@import './styles/header.scss';
+@import './styles/footer.scss';
+@import './styles/components.scss';
 
 * {
   margin: 0;
@@ -17,7 +9,6 @@
 
 .App {
   color: black;
-  text-align: center;
   min-height: 100vh;
   position: relative;
   background: url('../public/img/background-books.jpg') fixed;
@@ -30,7 +21,7 @@ a {
   font-weight: 900;
   margin: 20px;
   cursor: pointer;
-  color: var(--link-color);
+  color: $color-blue;
 }
 
 /* BUTTONS */
@@ -41,32 +32,33 @@ a {
   padding: 10px;
   font-weight: 500;
   font-size: 14px;
-  border-radius: var(--btn-radius);
+  border-radius: $btn-radius;
   cursor: pointer;
 }
 
 .solid-btn {
   border: none;
-  background-color: var(--btn-solid-bg);
-  color: var(--btn-solid-text);
+  background-color: $color-blue;
+  color: $color-white;
 }
 
 .outline-btn {
-  border: var(--border-color);
-  background-color: var(--btn-outline-bg);
-  color: var(--btn-outline-text);
+  border: $border-blue;
+  background-color: $color-white;
+  color: $color-blue;
 }
 
-button.solid-btn,
-button.outline-btn {
-  width: 130px;
-  margin: 20px;
+button {
+  &.solid-btn, &.outline-btn {
+    width: 130px;
+    margin: 20px;
+  }
 }
 
 .modal {
-  background-color: rgb(196, 250, 255);
-  color: black;
-  border: black;
+  background-color: $color-white;
+  color: $color-blue-dark;
+  border: $border-blue;
   display: flex;
   align-items: center;
   justify-content: center;
