@@ -54,7 +54,7 @@ const BooksContainer =()=>{
 
     // UPDATE ================================================================================== //
     const updateBook = async (idToUpdate, bookToUpdate) => {
-        console.log("updating");
+        // console.log("updating");
         try {
             const apiResponse = await fetch(`${apiUrl}/books/${idToUpdate}`, {
                 method: "PUT",
@@ -67,7 +67,7 @@ const BooksContainer =()=>{
             if (parsedResponse.success) {
                 const newBooks = books.map(book => book._id === idToUpdate ? bookToUpdate : book)
                 setBooks(newBooks)
-                console.log("updating saved book ID#" + idToUpdate);
+                // console.log("updating saved book ID#" + idToUpdate);
             } else {
                 setRequestError(parsedResponse.data);
             }
@@ -87,7 +87,7 @@ const BooksContainer =()=>{
             if (parsedResponse.success) {
                 const newBooks = books.filter(book => book._id !== idToDelete);
                 setBooks(newBooks);
-                console.log("deleting saved book ID#" + idToDelete);
+                // console.log("deleting saved book ID#" + idToDelete);
             } else {
                 console.log("Unable to delete or no saved book ID#" + idToDelete);
             }
