@@ -54,6 +54,12 @@ const SearchContainer = (props) => {
     const clearSearchResults = ()=> {
         setBookResults([]);
         setSearchInput("");
+        setSaveBook(undefined)
+    }
+
+    const onSubmitSaveBook = () => {
+        props.setShowingSearchForm(false);
+        setSaveBook(undefined);
     }
 
     return (
@@ -102,7 +108,7 @@ const SearchContainer = (props) => {
                         newBookServerError={props.newBookServerError}
                         showingForm={props.showingSearchForm}
                         setShowingForm={props.setShowingSearchForm}
-                        closeForm={() => props.setShowingSearchForm(false)}
+                        closeForm={onSubmitSaveBook}
                         buttonText={"Save Book"}
                         clearSearchResults={clearSearchResults}
                     />

@@ -40,6 +40,9 @@ const BooksContainer =()=>{
             const parsedResponse = await apiResponse.json();
             // console.log(parsedResponse);
             if (parsedResponse.success) {
+                if(parsedResponse.data._id){
+                    newBook._id = parsedResponse.data._id;
+                }
                 setBooks([...books, newBook]);
             } else {
                 setNewBookServerError(parsedResponse.data);
@@ -51,6 +54,7 @@ const BooksContainer =()=>{
 
     // UPDATE ================================================================================== //
     const updateBook = async (idToUpdate, bookToUpdate) => {
+        console.log("updating");
         try {
             const apiResponse = await fetch(`${apiUrl}/books/${idToUpdate}`, {
                 method: "PUT",
@@ -127,7 +131,7 @@ const BooksContainer =()=>{
                                     {/* TO DO: SORT BOOKSHELF BY LIST NAME? OR READ STATUS? */}
                                     {books.map((book) => {
                                         return <BookShelf
-                                            key={book.id}
+                                            key={book._id}
                                             book={book}
                                             updateBook={updateBook}
                                             deleteBook={deleteBook}
