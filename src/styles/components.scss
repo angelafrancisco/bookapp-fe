@@ -1,17 +1,5 @@
 @import './variables.scss';
 
-.content-wrapper {
-    background-color: $color-tan;
-    min-height: 50vh;
-    margin: 0 auto;
-    padding-bottom: 415px;
-
-    @media (min-width: 480px){
-        max-width: 1440px;
-        padding-bottom: 245px;
-    }
-}
-
 .content-container, .content-box {
     display: flex;
     justify-content: center;
@@ -248,17 +236,44 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                width: 140px;
                 
                 .book-img {
                     height: 210px;
                     width: 140px;
-                    
-                    &:hover {
-                        cursor: pointer;
+                    border-radius: 5px 5px 0 0;
+                }
+
+                &.img:hover {
+                    .book-img-overlay {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgb(255, 255, 255, 0.8);
                     }
                 }
-                .grid-box-btn:hover {
-                    background-color: rgb(255, 255, 255, 0.7);
+                
+                .book-img-title {
+                    background-color: $color-white;
+                    width: 130px;
+                    height: 100%;
+                    padding: 5px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    border-radius: 0 0 5px 5px;
+                }
+
+                .book-img-overlay {
+                    display: none;
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    border-radius: 5px 5px 0 0;
                 }
             }
             @media (min-width: 480px) {
@@ -274,12 +289,17 @@
             background-color: $color-blue-light;
             font-weight: 800;
             height: 20px;
-            width: 80%;
+            width: 85%;
             padding: 5px 20px;
+            text-align: center;
 
+            @media (min-width: 480px) {
+                width: 90%;
+                text-align: left;
+            }
             @media (min-width: 835px) {
-                width: 73%;
-                padding-left: 80px;
+                width: 77%;
+                padding-left: 55px;
             }
         }
     }

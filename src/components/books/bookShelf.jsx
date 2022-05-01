@@ -12,10 +12,13 @@ const BookShelf = (props) =>{
 
     return (
         <div className="grid-box" key={props.book._id}>
-            <img className="book-img view" src={props.book.image || "./img/book-default.jpeg"} alt={props.book.title} />
-            <div className="grid-box-btn">
-                <button onClick={() => setShowingBook(true)} className="view-btn">More Info</button>
+            <div className="grid-box img">
+                <img className="book-img view" src={props.book.image || "./img/book-default.jpeg"} alt={props.book.title} />
+                <div className="book-img-overlay">
+                    <button onClick={() => setShowingBook(true)} className="outline-btn">More Info</button>
+                </div>
             </div>
+            <h5 className="book-img-title">{props.book.title}</h5>
             {/* showing = false until edit button clicked */}
             <Modal isOpen={showingBook}>
                 <div className="book-view-modal">
