@@ -113,6 +113,13 @@ const BooksContainer =()=>{
                             showingSearchForm={showingSearchForm}
                             setShowingSearchForm={setShowingSearchForm}
                         />
+                        
+                    </div>
+                </div>
+                <div className="content-container bookshelf">
+                    {/* to do: add section for book suggestions here? */}
+                    <div className="content-box books">
+                        <h1 className="heading bookshelf">My Bookshelf</h1>
                         {/* NEW BUTTON / NEW FORM */}
                         <NewBook 
                             key={"new"}
@@ -122,10 +129,7 @@ const BooksContainer =()=>{
                             setShowingForm={setShowingForm}
                         />
                     </div>
-                </div>
-                <div className="content-container">
-                    {/* to do: add section for book suggestions here? */}
-                    <h2 className="heading">My Bookshelf</h2>
+                    <div className="divider-book-list">All Books</div>
                         {books.length > 0 ?
                                 <div className="grid-container bookshelf">
                                     {/* TO DO: SORT BOOKSHELF BY LIST NAME? OR READ STATUS? */}

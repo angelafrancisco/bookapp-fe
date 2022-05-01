@@ -96,4 +96,8 @@ button {
   &.login, &.register {
     text-align: center;
   }
+
+  &.bookshelf {
+    padding: 0 20px;
+  }
 }
