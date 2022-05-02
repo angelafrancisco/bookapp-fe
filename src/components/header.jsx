@@ -11,7 +11,7 @@ const Header = (props) => {
             {props.isLoggedIn ? 
             <>
                 <div className="nav-container left">
-                    <Link to="/" className="nav-logo"><img src="favicon.ico" alt="Logo" />.readME</Link>
+                    <Link to="/" className="nav-logo"><img src="favicon.ico" alt="Logo" /></Link>
                     <ul className={`nav-links-list ${showing ? "open" : ""}`}>
                         <li><Link to="/books" className="nav-link">My Books</Link></li>
                         <li><Link to="/books" className="nav-link">Search</Link></li>
@@ -42,7 +42,7 @@ const Header = (props) => {
             :
             <>
                 <div className="nav-container left">
-                    <Link to="/" className="nav-logo"><img src="favicon.ico" alt="Logo" />.readME</Link>
+                    <Link to="/" className="nav-logo"><img src="favicon.ico" alt="Logo" /></Link>
                     <ul className={`nav-links-list ${showing ? "open" : ""}`}>
                         <li><Link to="/" className="nav-link">About</Link></li>
                         <li><Link to="/" className="nav-link">Features</Link></li>

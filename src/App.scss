@@ -5,6 +5,7 @@
 
 * {
   margin: 0;
+  font-family: 'Solway', serif;
 }
 
 .App {
@@ -100,10 +101,10 @@ button {
     justify-content: space-between;
     
     label {
-      margin-right: 30px;
+      margin-right: 25px;
       
       @media (min-width: 480px) {
-        margin-right: 90px;
+        margin-right: 70px;
       }
     }
     input {
@@ -123,7 +124,7 @@ button {
         width: 155px;
         
         @media (min-width: 480px) {
-          width: 280px;
+          width: 285px;
         }
       }
     }
