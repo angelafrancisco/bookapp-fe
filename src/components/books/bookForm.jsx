@@ -64,29 +64,42 @@ const BookForm = (props) => {
                 <form onSubmit={handleSubmitBook}>
                     {isValidState.valid ? null : <p className='form-error'>{isValidState.message}</p>}
                     {props.newBookServerError ? <p className='form-error'>{props.newBookServerError}</p> : null}
-                    {/* TITLE */}
-                    <label htmlFor="title">Book Title:<span className='required-field'>*</span></label>
-                    <input onChange={handleInputChange} type="text" name="title" required value={bookData.title} />
-                    {/* AUTHOR */}
-                    <label htmlFor="author">Book Author(s):<span className='required-field'>*</span></label>
-                    <input onChange={handleInputChange} type="text" name="author" required value={bookData.author} />
-                    {/* DESCRIPTION */}
-                    <label htmlFor="description">Book Description:</label>
-                    <input onChange={handleInputChange} type="text" name="description" value={bookData.description} />
-                    {/* IMAGE */}
-                    <label htmlFor="image">Image URL: </label>
-                    <input onChange={handleInputChange} type="text" name="image" value={bookData.image} />
-                    {/* READ STATUS */}
-                    <label htmlFor="read">Reading Status:<span className='required-field'>*</span></label>
-                    <select onChange={handleInputChange} name="read" required value={bookData.read} >
-                        <option value="" disabled>-Select-</option>
-                        <option value="Read">Read</option>
-                        <option value="Want to Read">Want to Read</option>
-                        <option value="Currently Reading">Currently Reading</option>
-                    </select>
-                    {/* LIST NAME */}
-                    <label htmlFor="listName">List Name: </label>
-                    <input onChange={handleInputChange} type="text" name="listName" value={bookData.listName} />
+                    <p className='required-field note'>* Required Fields</p>
+                    <div className="book-form-rows">
+                        {/* TITLE */}
+                        <label htmlFor="title">Book Title<span className='required-field'>*</span></label>
+                        <input onChange={handleInputChange} type="text" name="title" required value={bookData.title} />
+                    </div>
+                    <div className="book-form-rows">
+                        {/* AUTHOR */}
+                        <label htmlFor="author">Book Author(s)<span className='required-field'>*</span></label>
+                        <input onChange={handleInputChange} type="text" name="author" required value={bookData.author} />
+                    </div>
+                    <div className="book-form-rows">
+                        {/* DESCRIPTION */}
+                        <label htmlFor="description">Book Description</label>
+                        <input onChange={handleInputChange} type="text" name="description" value={bookData.description} />
+                    </div>    
+                    <div className="book-form-rows">
+                        {/* IMAGE */}
+                        <label htmlFor="image">Image URL</label>
+                        <input onChange={handleInputChange} type="text" name="image" value={bookData.image} />
+                    </div>
+                    <div className="book-form-rows dropdown">   
+                        {/* READ STATUS */}
+                        <label htmlFor="read">Reading Status<span className='required-field'>*</span></label>
+                        <select onChange={handleInputChange} name="read" required value={bookData.read} >
+                            <option value="" disabled>-Select-</option>
+                            <option value="Read">Read</option>
+                            <option value="Want to Read">Want to Read</option>
+                            <option value="Currently Reading">Currently Reading</option>
+                        </select>
+                    </div>
+                    <div className="book-form-rows">  
+                        {/* LIST NAME */}
+                        <label htmlFor="listName">List Name</label>
+                        <input onChange={handleInputChange} type="text" name="listName" value={bookData.listName} />
+                    </div>
                     <button type="submit" className="solid-btn">{props.buttonText}!</button>
                 </form>
             </div >
