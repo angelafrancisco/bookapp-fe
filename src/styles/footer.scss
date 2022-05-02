@@ -35,19 +35,21 @@ footer {
         @media (min-width: 480px) {
             flex-direction: row;
             width: 90%;
-
+            justify-content: space-between;
+        }
+        @media (min-width: 835px) {
             &.top {
                 justify-content: flex-start;
-
+                
                 .footer-logo {
-                    margin-right: 400px;
+                    margin-right: 530px;
                 }
             }
             &.bottom {
                 justify-content: flex-end;
-
+                
                 .footer-text {
-                    margin-left: 450px;
+                    margin-left: 600px;
                 }
             }
         }

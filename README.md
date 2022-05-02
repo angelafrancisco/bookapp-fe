@@ -76,9 +76,11 @@ Bookshelf
 
 - Improved Accessibility
 - Book recommendations (vacation reads, YA fantasy series, etc.)
-- Organize books by custom list name
-    - Show first 3-4 books, link to see full list on new page
+- Organize/Sort books by:
+    - List name: show first 3-4 books, link to see full list on new page
+    - Read status
 - User model and authentication (currently created a temporary "login" React state)
+- Research browser warning for "mixed content" requesting insecure element URL and auto converting to HTTPS
 
 
 ## Model
