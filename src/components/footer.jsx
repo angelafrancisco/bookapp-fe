@@ -8,17 +8,17 @@ const Footer = () => {
                     <Link to="/" className="footer-logo"><img src="favicon.ico" alt="Logo" />.readME</Link>
                     <div className="footer-links-section">
                         <ul className="footer-links-list left">
-                            <li><Link to="/" className="footer-link">Mobile app</Link></li>
+                            <li className="footer-link"><Link to="/" className="footer-link">Mobile app</Link></li>
                             <li className="footer-text">Features</li>
                             <li className="footer-text">Live read</li>
                         </ul>
                         <ul className="footer-links-list mid">
-                            <li><Link to="/" className="footer-link">Community</Link></li>
+                            <li className="footer-link"><Link to="/" className="footer-link">Community</Link></li>
                             <li className="footer-text">Reviews</li>
                             <li className="footer-text">Local events</li>
                         </ul>
                         <ul className="footer-links-list right">
-                            <li><Link to="/" className="footer-link">Company</Link></li>
+                            <li className="footer-link"><Link to="/" className="footer-link">Company</Link></li>
                             <li className="footer-text">About</li>
                             <li className="footer-text">Contact</li>
                         </ul>

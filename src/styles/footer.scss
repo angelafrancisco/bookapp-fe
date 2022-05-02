@@ -10,39 +10,54 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
+    color: $color-white;
     
     .footer-wrapper {
         width: 100%;
         padding: 20px 0;
     }
-
-    .footer-container, 
+    
     .footer-wrapper,
+    .footer-container, 
     .footer-links-section,
     .footer-logo {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-
-    .footer-container,
-    .footer-wrapper {
+    
+    .footer-wrapper, 
+    .footer-container {
         flex-direction: column;
     }
-
+    
     .footer-container {
         @media (min-width: 480px) {
             flex-direction: row;
-            justify-content: space-between;
+            width: 90%;
+
+            &.top {
+                justify-content: flex-start;
+
+                .footer-logo {
+                    margin-right: 400px;
+                }
+            }
+            &.bottom {
+                justify-content: flex-end;
+
+                .footer-text {
+                    margin-left: 450px;
+                }
+            }
         }
     }
-
+    
     .footer-links-section, 
     .footer-logo {
         justify-content: space-around;
     }
-
+    
     .footer-links-list {
         list-style-type: none;
         padding: 0px;
@@ -53,14 +68,27 @@ footer {
             justify-content: center;
             align-items: center;
             margin-bottom: 30px;
-        }
 
+            .footer-link {
+                position: relative;
+                top: 0;
+
+                &:hover {
+                    top: -5px;
+                }
+            }
+        }
         .footer-text {
             font-size: smaller;
             margin: 0 20px;
         }
+        @media (min-width:480px) {
+            .footer-link {
+                margin-bottom: 5px;
+            }
+        }
     }
-
+    
     .horizontal-line {
         background-color: $color-white;
         height: 1px;
@@ -68,7 +96,7 @@ footer {
         margin: 20px 0;
     }
     
-    .footer-link, .footer-logo, .footer-text {
+    .footer-link, .footer-logo {
         color: $color-white
     }
 }

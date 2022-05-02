@@ -8,6 +8,14 @@ nav {
     padding: 0 10px;
     height: 75px;
     border-bottom: 3px inset rgb(159, 154, 145);
+    transition: 0.5s;
+
+    &.open {
+        height: 100%;
+        align-items: flex-start;
+        transition: 0.5s;
+        padding-bottom: 20px;
+    }
     
     .nav-container, .nav-logo {
         display: flex;
@@ -17,47 +25,14 @@ nav {
     .nav-logo {
         font-size: 24px;
     }
-
-    .nav-hamburger-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 20px;
-        cursor: pointer;
-        
-        @media (min-width: 480px) {
-            display: none;
-        }
-    }
     
-    .nav-hamburger {
-        width: 30px;
-        height: 4px;
-        background-color: $color-blue;
-        margin: 3px 0px;
-        transition: 0.5s;
-
-        &.move.bar1 {
-            transform: rotate(-45deg) translate(-5px, 9px);
-        }
-
-        &.move.bar2 {
-            opacity: 0;
-        }
-
-        &.move.bar3 {
-            transform: rotate(45deg) translate(-5px, -9px);
-        }
-    }
-
     .nav-links-list {
         list-style-type: none;
         display: none;
         justify-content: center;
         align-items: center;
         padding: 0;
-
+        
         .outline-btn.account {
             margin: 0;
         }
@@ -66,7 +41,65 @@ nav {
             display: flex;
         }
     }
-
+    
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        transition: 0.5s;
+        
+        .nav-hamburger-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            cursor: pointer;
+            
+            .nav-hamburger {
+                width: 30px;
+                height: 4px;
+                background-color: $color-blue;
+                margin: 3px 0px;
+                transition: 0.5s;
+            }
+            &.move {
+                .bar1 {
+                    transform: rotate(-45deg) translate(-5px, 9px);
+                }
+                .bar2 {
+                    opacity: 0;
+                }
+                .bar3 {
+                    transform: rotate(45deg) translate(-5px, -9px);
+                }
+            }
+            @media (min-width: 480px) {
+                display: none;
+            }
+        }
+        
+        .open-mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            height: 100%;
+            
+            li {
+                margin: 10px 0;
+            }
+            &.btns {
+                flex-direction: row;
+                .mobile-nav-btn {
+                    margin: 15px -8px;
+                }
+            }
+        }
+        @media (min-width: 480px) {
+            display: none;
+        }
+    }
+    
     @media (min-width: 480px) {
         flex-wrap: nowrap;
     }

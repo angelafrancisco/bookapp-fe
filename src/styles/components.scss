@@ -290,8 +290,12 @@
                 text-align: left;
             }
             @media (min-width: 835px) {
+                width: 87%;
+                padding-left: 40px;
+            }
+            @media (min-width: 1700px) {
                 width: 77%;
-                padding-left: 55px;
+                padding-left: 50px;
             }
         }
     }
