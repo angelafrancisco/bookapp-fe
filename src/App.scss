@@ -70,13 +70,73 @@ button {
   background-color: $color-white;
   color: $color-blue-dark;
   border: $border-blue;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 200px auto;
+  margin: 150px 10px;
   overflow: hidden;
   padding: 25px;
-  max-width: 500px;
+  max-width: 320px;
+  display: flex;
+  justify-content: center;
+  
+  @media (min-width: 480px) {
+    margin: 200px auto;
+    max-width: 500px;
+  }
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  
+  .outline-btn, .solid-btn {
+    margin: 0;
+  }
+  .book-form-rows {
+    padding: 5px 0;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    
+    label {
+      margin-right: 30px;
+      
+      @media (min-width: 480px) {
+        margin-right: 90px;
+      }
+    }
+    input {
+      width: 150px;
+      height: 15px;
+      
+      @media (min-width: 480px){
+        width: 275px;
+        height: 20px;
+      }
+    }
+    &.dropdown {
+      justify-content: left;
+      
+      select {
+        margin-left: 8px;
+        width: 155px;
+        
+        @media (min-width: 480px) {
+          width: 280px;
+        }
+      }
+    }
+  }
+  .required-field {
+    color: rgb(255, 0, 0);
+    font-style: italic;
+    
+    &.note {
+      font-size: .75em;
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .overlay-modal {
@@ -86,6 +146,7 @@ button {
   position: fixed;
   right: 0;
   top: 0;
+  width: 100%;
 }
 
 .sr-only {
@@ -99,6 +160,9 @@ button {
 
 .bold-text {
   font-weight: 800;
+}
+.italic-text {
+  font-style: italic;
 }
 
 .heading {
