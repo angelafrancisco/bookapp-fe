@@ -69,6 +69,7 @@ Bookshelf
 - SASS
 - Responsive Design
 - React Router Links
+- React Modal
 - Saving API book results to "My Bookshelf"
 
 
