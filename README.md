@@ -66,6 +66,7 @@ Bookshelf
 
 ## Capstone Project Stretch Goals:
 
+- Wireframing
 - SASS
 - Responsive Design
 - React Router Links
