@@ -6,8 +6,8 @@
 
 ## Deployed Website
 
-Hosted via Heroku:\
-https://readme-bookapp.herokuapp.com/
+Hosted via Netlify:\
+https://bookapp-capstone.netlify.app/
 
 
 ## Technology (MERN Stack)
@@ -61,7 +61,7 @@ Bookshelf
 - One model with full CRUD (book)
 - Public API: [Google Books API](https://developers.google.com/books)
 - Search functionality (using API data)
-- Deployed online and accessible to the public via Heroku
+- Deployed online and accessible to the public via netlify
 
 
 ## Capstone Project Stretch Goals:
