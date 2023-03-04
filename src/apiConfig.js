@@ -2,7 +2,7 @@ let apiUrl
 
 const apiUrls = {
     development: "http://localhost:3001",
-    production: "https://bookapp-backend.netlify.app/"
+    production: "https://bookapp-backend.netlify.app"
 }
 
 if (window.location.hostname === "localhost") {
